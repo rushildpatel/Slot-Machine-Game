@@ -1,3 +1,32 @@
+:root {
+  --speed: 5;
+}
+
+body {
+  margin-left: 15%;
+}
+
+label {
+  display: inline-block;
+  font-size: 25pt;
+  margin-left: 15%;
+}
+.buttonInput {
+  display: inline-flex;
+}
+#stopButton {
+  margin-left: 150px;
+  background-color: red;
+  font-size: 25pt;
+  box-shadow: 2px 2px black;
+}
+#spinButton {
+  margin-left: 100px;
+  background-color: greenyellow;
+  font-size: 25pt;
+  box-shadow: 2px 2px black;
+}
+
 .machine {
   background-color: peru;
   border: 2px dashed black;
@@ -7,6 +36,12 @@
 
   display: flex;
   z-index: 5;
+}
+
+#inpSpeed {
+  font-size: 30pt;
+  margin: 30px;
+  width: 50px;
 }
 
 .slot {
@@ -26,7 +61,9 @@
 
 .slot > .value {
   z-index: 3;
-  animation: slotspin infinite 0.3s;
+  animation-name: slotspin;
+  animation-iteration-count: infinite;
+  animation-duration: calc(1s / var(--speed));
 }
 
 @keyframes slotspin {
